@@ -1,0 +1,96 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1c1c1e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent; /* Evita el destello azul al tocar en móviles */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#status-display {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.status-loading {
+    background-color: #3a3a3c;
+    color: #9d9d9f;
+}
+
+.status-active {
+    background-color: #d12727; /* Rojo */
+    color: #ffffff;
+}
+
+.status-inactive {
+    background-color: #34c759; /* Verde */
+    color: #ffffff;
+}
+
+/* --- Estilo para el Interruptor (Toggle Switch) --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #d12727; /* Rojo cuando está activo */
+}
+
+input:not(:checked) + .slider {
+    background-color: #34c759; /* Verde cuando está inactivo */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
